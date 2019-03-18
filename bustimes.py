@@ -12,8 +12,8 @@ def printtime(cbt, busstop):
 		arrivaltime = time['prediction']
 		currenttime = cbt.get_time()
 		waittime = arrivaltime - currenttime
-		print "%s is arriving at %s in %.0f minutes"%(busnum,
-													arrivaltime.strftime("%H:%M"),
-													waittime.seconds/60.)
+		print "%4s is arriving at %s in %2.0f minutes"%(busnum,
+												arrivaltime.strftime("%H:%M"),
+												waittime.seconds/60.)
 if __name__ == '__main__':
 	printtime(cbt, busstop)
