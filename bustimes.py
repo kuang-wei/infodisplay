@@ -42,7 +42,7 @@ def printtime(cbt, busstop, timeout=5*60.):
 	tstart = datetime.datetime.now()
 	while int((datetime.datetime.now()-tstart).total_seconds()*1000)<timeout:
 		for displaylines in alltimes:
-			lcddisplay(displaylines)
+			lcddisplay('\n'.join(displaylines))
 			time.sleep(1.2)
 
 def lcddisplay(message):
