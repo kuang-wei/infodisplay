@@ -1,16 +1,17 @@
 #!/usr/bin/python
 # Example using a character LCD connected to a Raspberry Pi or BeagleBone Black.
 import time
+import datetime
 from ctabustracker import CTABusTracker
 import config as cfg
 import Adafruit_CharLCD as LCD
 
 global busstop, cbt
-busstop = '1521'
-#busstop = '1427'
+#busstop = '1521'
+busstop = '1427'
 cbt = CTABusTracker(cfg.buskey)
 timeout = 60*5
-refreshinterval = 1.2 # in seconds
+refreshinterval = 3.0 # in seconds
 
 # get and parse bus times
 times = cbt.get_stop_predictions(busstop)
@@ -37,7 +38,7 @@ while lcdlines:
 
 # loop through
 tstart = datetime.datetime.now()
-while int((datetime.datetime.now()-tstart).total_seconds()*1000)<timeout:
+while int((datetime.datetime.now()-tstart).total_seconds())<timeout:
 	for displaylines in alltimes:
 		displaystr = '\n'.join(displaylines)
 		
