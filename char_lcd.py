@@ -7,8 +7,8 @@ import config as cfg
 import Adafruit_CharLCD as LCD
 
 global busstop, cbt
-#busstop = '1521'
-busstop = '1427'
+busstop = '1521'
+#busstop = '1427'
 cbt = CTABusTracker(cfg.buskey)
 timeout = 60*5
 refreshinterval = 3.0 # in seconds
